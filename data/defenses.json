@@ -1,8 +1,18 @@
 {
   "defenses": {
-    "stoneskin": {
-      "requires": "eqbal",
-      "command": "cast stoneskin"
+    "yesod": {
+      "requires": "ready",
+      "consumes": "eq",
+      "command": "evoke yesod",
+      "up": [
+        "Muttering the secret names of Yesod, you trace a glowing circle in front of you. You step into the circle of energy, coming out of it cloaked in invisibility."
+      ],
+      "active": [
+        "Your actions are cloaked in secrecy."
+      ],
+      "down": [
+        "Muttering the secret names of Yesod, you trace a glowing circle in front of you. You step into the circle of energy, feeling your invisibility melt away with it."
+      ]
     }
   }
 }
