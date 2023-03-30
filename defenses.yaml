@@ -1,0 +1,4 @@
+defenses:
+  stoneskin:
+    requires: eqbal
+    command: cast stoneskin
