@@ -1,16 +1,7 @@
-export { }
-
-declare global {
-    var args: {
-        gmcp_method: string;
-        gmcp_args: any;
-    }
-}
-
 function parseVitals(raw: Record<string, string>) {
     const bools = new Set(["allheale", "balance", "beastbal", "blind", "deaf", "eflowbal", "enigmaticflow", "equilibrium", "head", "healing", "ice", "kafe", "left_arm", "left_leg", "mount", "prone", "psiid", "psisub", "psisuper", "right_arm", "right_leg", "scroll", "slush", "sparkleberry", "steam", "vote"]);
     const ints = new Set(["awp", "bleeding", "bruising", "chestwounds", "dust", "ego", "empathy", "essence", "esteem", "gutwounds", "headwounds", "hemorrhaging", "hp", "karma", "leftarmwounds", "leftlegwounds", "maxawp", "maxego", "maxhp", "maxmp", "maxpow", "mp", "pow", "reserves", "rightarmwounds", "rightlegwounds"]);
-    const parsed = {};
+    const parsed: Record<string, any> = {};
     for (const key in raw) {
         const val = raw[key];
         if (bools.has(key)) {

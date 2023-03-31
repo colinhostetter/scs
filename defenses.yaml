@@ -4,3 +4,88 @@ defenses:
     consumes: equilibrium
     command: evoke yesod
     gmcp: true
+  stoneskin:
+    requires: ready
+    consumes: equilibrium
+    command: cast stoneskin
+    up:
+      - Calling the powers of the elemental earth, your skin hardens with a layer of supple granite.
+      - You already are coated with stone.
+    active:
+      - Your skin is coated with a supple layer of granite.
+  elementshield:
+    requires: ready
+    consumes: equilibrium
+    command: cast elementshield
+    up:
+      - You cross your arms and a shimmering elemental shield surrounds you.
+      - You already possess an element shield.
+    active:
+      - You are shielded from the elements.
+  levitate:
+    requires: ready
+    consumes: equilibrium
+    command: cast levitate
+    up:
+      - You take a deep breath and fill your cheeks with air until they bulge out. After a moment, the air in your cheeks disappears and is absorbed into you.
+      - You are already walking on a small cushion of air.
+    active:
+      - You are protected by Levitate.
+  waterbreathe:
+    requires: ready
+    consumes: equilibrium
+    command: cast waterbreathe
+    up:
+      - You briefly hold your hand over your mouth until your lips and tongue tingle.
+      - You are already filtering air out of water.
+    active:
+      - Water is to you as air, and you shall not drown.
+  windwalk:
+    requires: ready
+    consumes: equilibrium
+    command: aerocast windwalk
+    up:
+      - You walk around in a small circle, allowing your presence to bond with the air around you.
+      - You are already walking upon winds.
+    active:
+      - You can walk on the winds.
+  psisense:
+    requires: ready
+    consumes: psisub
+    command: psi sub psisense on
+    up:
+      - You open up your mind to sense psionic activity around you.
+      - You are already sensing for psionic activity.
+    active:
+      - You are sensing psionic activity.
+    down:
+      - You close your mind to sensing psionic activity.
+  bodydensity:
+    requires: ready
+    consumes: psisuper
+    command: psi super bodydensity
+    up:
+      - You concentrate on forcing your body to become more dense.
+      - You have already become more dense.
+    active:
+      - You are using your mind to make your body more dense.
+    down:
+      - You concentrate on your body and feel it becoming less dense.
+  phantomarmour:
+    requires: ready
+    consumes: equilibrium
+    command: weave phantomarmour
+    up:
+      - You fluidly wave your arms about your body and notice that with each pass pieces of phantom armour are revealed. Finally, you appraise your body and admire the purple sheen now surrounding you.
+      - You already don a suit of phantom armour.
+    active:
+      - You are surrounded by phantom armour.
+  insomnia:
+    requires: []
+    consumes: []
+    command: insomnia
+    up:
+      - You clench your fists, grit your teeth, and banish all possibility of sleep.
+      - You are already an insomniac.
+    active:
+      - You have insomnia, and cannot easily go to sleep.

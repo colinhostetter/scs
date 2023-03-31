@@ -8,8 +8,25 @@ declare global {
             messageHash: Record<string, MessageEffect>,
         }
     }
+
     function send_command(command: string): void;
     function display_notice(text: string): void;
+
+    // @ts-expect-error
+    var arguments: [Line][];
+    var args: {
+        gmcp_method: string;
+        gmcp_args: any;
+    }
+}
+
+interface Line {
+    // some other stuff...
+    parsed_line: {
+        chunks: {
+            _txt?: string;
+        }[]
+    }
 }
 
 interface ActiveDefense {

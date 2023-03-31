@@ -1,19 +1,3 @@
-export { }
-
-interface Line {
-    // some other stuff...
-    parsed_line: {
-        chunks: {
-            _txt?: string;
-        }[]
-    }
-}
-
-declare global {
-    // @ts-expect-error
-    var arguments: [Line][];
-}
-
 const lines = arguments[0];
 for (const line of lines) {
   const text = line.parsed_line.chunks.map(i => i._txt || "").join("");
