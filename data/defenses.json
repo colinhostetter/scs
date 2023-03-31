@@ -2,7 +2,7 @@
   "defenses": {
     "yesod": {
       "requires": "ready",
-      "consumes": "eq",
+      "consumes": "equilibrium",
       "command": "evoke yesod",
       "gmcp": true
     }
