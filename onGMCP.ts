@@ -39,23 +39,16 @@ function clearExpiredExpectations() {
 
 function takeActions() {
     const balancesForReady = ["equilibrium", "balance", "psisub", "psiid", "psisuper"];
-    const ready = balancesForReady.every(bal => window.SCS.vitals[bal]);
-    const balanceTypes = ["equilibrium", "balance", "herb"];
-    for (const balanceType of balanceTypes) {
-        if (!window.SCS.vitals[balanceType]) continue;
-        if (window.SCS.expectedUsage[balanceType]) continue;
-        for (const def in window.SCS.data.defenses) {
-            let { requires, consumes, command } = window.SCS.data.defenses[def];
-            if (window.SCS.defenses[def]) continue;
-            if (window.SCS.expectedUsage[def]) continue;
-            if (requires === "ready" && !ready) continue;
-            if (requires !== "ready" && !window.SCS.vitals[requires]) continue;
-            if (consumes && consumes !== balanceType) continue;
-            const usageKey = consumes || def;
-            console.log(usageKey)
-            window.SCS.expectedUsage[usageKey] = Date.now();
-            send_command(command);
-        }
+    for (const def in window.SCS.data.defenses) {
+        let { requires, consumes, command } = window.SCS.data.defenses[def];
+        if (window.SCS.defenses[def]) continue;
+        if (window.SCS.expectedUsage[def]) continue;
+        const ready = balancesForReady.every(bal => window.SCS.vitals[bal] && !window.SCS.expectedUsage[bal]);
+        if (requires === "ready" && !ready) continue;
+        if (requires && requires !== "ready" && !window.SCS.vitals[requires]) continue;
+        const usageKey = consumes || def;
+        window.SCS.expectedUsage[usageKey] = Date.now();
+        send_command(command);
     }
 }
 

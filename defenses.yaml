@@ -81,11 +81,83 @@ defenses:
     active:
       - You are surrounded by phantom armour.
   insomnia:
-    requires: []
-    consumes: []
+    requires: ~
+    consumes: ~
     command: insomnia
     up:
       - You clench your fists, grit your teeth, and banish all possibility of sleep.
       - You are already an insomniac.
     active:
       - You have insomnia, and cannot easily go to sleep.
+  thirdeye:
+    requires: ~
+    consumes: ~
+    command: thirdeye
+    up:
+      - You now possess the gift of the third eye.
+      - You already possess the thirdeye.
+    active:
+      - You are viewing the world through the third eye.
+  deathsight:
+    requires: ready
+    consumes: equilibrium
+    command: deathsight
+    up:
+      - You shut your eyes and concentrate on the end of life. A moment later, you feel inextricably linked with the strings of fate.
+      - Your mind is already linked to the strings of fate.
+    active:
+      - Your mind is linked with the strings of fate, bringing news of the dead.
+    down:
+      - You shut your eyes and concentrate on life. A moment later, you feel your link with the strings of fate sever.
+      - Your mind is not currently linked to the strings of fate.
+  nightsight:
+    requires: ~
+    consumes: ~
+    command: nightsight
+    up:
+      - Your vision sharpens with light as you gain night sight.
+      - Your eyes are already attuned to the shadows of night.
+    active:
+      - Your vision is heightened to see in the dark.
+  lipread:
+    requires: ready
+    consumes: equilibrium
+    command: lipread
+    up:
+      - You will now lip read to overcome the effects of deafness.
+      - You are already lipreading.
+    active:
+      - You are lipreading to overcome deafness.
+  selfishness:
+    requires: ready
+    consumes: equilibrium
+    command: selfishness
+    up:
+      - You rub your hands together greedily.
+      - You already are a selfish bastard.
+    active:
+      - You are feeling quite selfish.
+    down:
+      - A feeling of generosity spreads throughout you.
+      - No worries. You're not a selfish bastard as is.
+  malkuth:
+    requires: ready
+    consumes: equilibrium
+    command: evoke malkuth
+    up:
+      - Muttering the secret names of Malkuth, you trace glowing geometric patterns in the air which settle around you, grounding you to the earth.
+      - The sphere of Malkuth already binds you to the earth.
+    active:
+      - The pull of the earth roots you more firmly to the ground.
+    down:
+      - You allow the sphere of Malkuth to leave you, unbinding you from the earth.
+      - You are not bound to the earth by the sphere of Malkuth.
+  netzach:
+    requires: ready
+    consumes: equilibrium
+    command: evoke netzach
+    up:
+      - Muttering the secret names of Netzach, you trace the glowing symbol of a rose before you. You smile as the rose floats towards you and enters your chest, making your personality sparkle.
+      - You are already basking in the Netzach Sphere.
+    active:
+      - Netzach.
